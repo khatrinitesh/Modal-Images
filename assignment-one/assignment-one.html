@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>CSS Reference</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+</head>
+<body>
+	<img id="myImg" src="https://www.w3schools.com/howto/img_fjords.jpg" alt="Trolltunga, Norway" width="300" height="200">
+
+  <!-- MODAL -->
+  <div id="dialog_modal">
+      <div class="content-box">
+        <span class="close">&times;</span>
+        <img alt="Trolly" id='imgContent' class="img_responsive">
+        <div id="caption_txt"></div>
+      </div>
+  </div>
+ 
+  <!-- js-->
+  <script type='text/javascript'>
+    // IMAGE
+    var img = document.getElementById('myImg');
+
+    // MODAL
+    var modal_dialog = document.getElementById('dialog_modal');
+    var content = document.getElementById('imgContent');
+    var caption_font = document.getElementById('caption_txt');
+
+    // IMG >> OPEN MODAL
+    img.onclick = function(){
+        modal_dialog.style.display = 'block';
+        imgContent.src = this.src;
+        caption_font.innerHTML = this.alt;
+    }
+
+    // CLOSE >> CLOSE MODAL
+    var close_icon = document.getElementsByClassName('close')[0];
+    close_icon.onclick = function(){
+      modal_dialog.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
